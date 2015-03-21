@@ -1,0 +1,15 @@
+[user]
+	email = jeremy@thehipbot.com
+	name = Jeremy \"TheHipbot\" Chambers
+[push]
+    default = simple
+[alias]
+	# abbreviations
+    	st = status -s
+    	co = checkout
+       	br = branch
+	co = checkout
+	stat = status
+[core]
+	editor = emacs
+	autocrlf = false

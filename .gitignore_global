@@ -1,0 +1,7 @@
+### Emacs ###
+*~
+\#*\#
+
+### JetBrains ###
+*.iml
+.idea/
