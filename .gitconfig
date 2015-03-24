@@ -5,11 +5,13 @@
     default = simple
 [alias]
 	# abbreviations
-    	st = status -s
-    	co = checkout
-       	br = branch
+    st = status -s
+    co = checkout
+    br = branch
 	co = checkout
 	stat = status
+	pullr = pull --rebase
 [core]
 	editor = emacs
 	autocrlf = false
+	excludesfile = ~/.gitignore_global
