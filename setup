@@ -29,5 +29,5 @@ end.parse!
 
 # symlink files
 files.each do |f|
-  File.symlink("#{File.dirname(__FILE__)}/#{f}", "#{ENV['HOME']}/#{f}")
+  File.symlink("#{File.expand_path(File.dirname(__FILE__))}/#{f}", "#{ENV['HOME']}/#{f}")
 end
