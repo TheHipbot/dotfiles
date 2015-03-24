@@ -6,17 +6,24 @@ require 'optparse'
 # map of command line options
 options = {}
 
+options[:onlylinks] = false
+
 # array of files to symlink
 files = %w{
     .bash_profile
     .gitconfig
     .gitignore_global
+    .tmux.conf
 }
 
 # parse command line options
 OptionParser.new do |opts|
   opts.on("-p [ARG]", "--platform [ARG]") do |p|
     options[:platform] = p
+  end
+
+  opts.on("-l", "--links-only") do |p|
+    options[:onlylinks] = true
   end
 end.parse!
 
