@@ -11,6 +11,7 @@
 	co = checkout
 	stat = status
 	pullr = pull --rebase
+	test = status
 [core]
 	editor = emacs
 	autocrlf = false
