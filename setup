@@ -29,5 +29,9 @@ end.parse!
 
 # symlink files
 files.each do |f|
-  File.symlink("#{File.expand_path(File.dirname(__FILE__))}/#{f}", "#{ENV['HOME']}/#{f}")
+  if File.exist?("#{ENV['HOME']}/#{f}")
+    puts "File #{f} already exists in home folder, SKIPPING"
+  else
+    File.symlink("#{File.expand_path(File.dirname(__FILE__))}/#{f}", "#{ENV['HOME']}/#{f}")
+  end
 end
