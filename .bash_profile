@@ -1,5 +1,7 @@
 export PS1="\u@\h \W [\$(date +%k:%M:%S)] > "
 
+export EDITOR=emacs
+
 #---------JAVA--------#
 export JAVA_VERSION=1.8
 export JAVA_HOME=`/usr/libexec/java_home -v $JAVA_VERSION`
