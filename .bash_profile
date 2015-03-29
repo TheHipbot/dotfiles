@@ -61,4 +61,4 @@ fi
 
 
 eval "$(rbenv init -)"
-export PATH=/usr/local/bin:/usr/local/sbin:$PATH:$HOME/.rbenv/bin:$GOPATH/bin
+export PATH=/usr/local/bin:/usr/local/sbin:$PATH:$HOME/.rbenv/bin:$GOPATH/bin:$EC2_HOME/bin
