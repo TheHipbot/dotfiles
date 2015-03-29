@@ -1,6 +1,6 @@
 export PS1="\u@\h \W [\$(date +%k:%M:%S)] > "
 
-export EDITOR=emacs
+export EDITOR=vim
 
 #---------JAVA--------#
 export JAVA_VERSION=1.8
