@@ -34,7 +34,7 @@ export AWS_HOME=/Users/jerome/.aws
 export AWS_CREDENTIALS=$AWS_HOME/.keys
 export AWS_KEYPAIRS=$AWS_CREDENTIALS/key-pairs
 
-source AWS_CREDENTIALS/aws-key-vars
+source $AWS_CREDENTIALS/aws-key-vars
 
 #--- CREDENTIALS ---#
 export EC2_PRIVATE_KEY=$AWS_CREDENTIALS/pk-T5O5D4Q37KR7AIPS3FBY2ZJQYWFWOQ3Z.pem
