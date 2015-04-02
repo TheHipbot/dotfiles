@@ -7,6 +7,7 @@ export JAVA_VERSION=1.8
 export JAVA_HOME=`/usr/libexec/java_home -v $JAVA_VERSION`
 
 export SCALA_HOME=/usr/local/share/scala
+export SBT_OPTS="-XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=256M"
 
 #-----------G0-------------#
 export GOVERSION=$(brew list go | head -n 1 | cut -d '/' -f 6)
