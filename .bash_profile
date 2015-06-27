@@ -80,12 +80,12 @@ fi
 ## Docker
 
 # remove all containers
-drma() {
+drmca() {
     docker rm $(docker ps -q -a);
 }
 
 # remove all images
-drma() {
+drmia() {
     docker rmi $(docker images -q);
 }
 
