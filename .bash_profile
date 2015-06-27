@@ -86,7 +86,7 @@ drma() {
 
 # remove all images
 drma() {
-    docker rmi $(docker iamges -q);
+    docker rmi $(docker images -q);
 }
 
 eval "$(rbenv init -)"
