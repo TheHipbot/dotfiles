@@ -9,9 +9,10 @@
     co = checkout
     br = branch
 	co = checkout
+	cp = cherry-pick
 	stat = status
 	pullr = pull --rebase
 [core]
-	editor = emacs
+	editor = vim
 	autocrlf = false
 	excludesfile = ~/.gitignore_global
