@@ -16,7 +16,7 @@ export GOROOT=$(brew --prefix)/Cellar/go/$GOVERSION/libexec
 export GOPATH=/Users/jerome/go
 
 #---------DOCKER-----------#
-export DOCKER_HOST=tcp://192.168.59.103:2376
+export DOCKER_HOST=tcp://127.0.0.1:2376
 export DOCKER_CERT_PATH=~/.boot2docker/certs/boot2docker-vm
 export DOCKER_TLS_VERIFY=1
 
