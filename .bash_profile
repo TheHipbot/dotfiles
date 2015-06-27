@@ -21,7 +21,14 @@ export DOCKER_CERT_PATH=~/.boot2docker/certs/boot2docker-vm
 export DOCKER_TLS_VERIFY=1
 
 #---------------- ALIASES --------------------------#
+
+## Bash
 alias lart='ls -lart'
+
+## Docker
+alias dip="docker inspect --format '{{ .NetworkSettings.IPAddress }}'"
+alias druni="docker run -t -i -P"
+alias drund="docker run -d -P"
 
 #------------ SSH COMMANDS -------------#
 
@@ -54,7 +61,7 @@ export AWS_AUTO_SCALING_HOME=$AWS_HOME/autoscaling
 export EC2_HOME=$AWS_HOME/ec2
 
 
-#-----GIT-----#
+#----- GIT -----#
 
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
     . $(brew --prefix)/etc/bash_completion
@@ -68,6 +75,19 @@ if [ -f "$(brew --prefix bash-git-prompt)/share/gitprompt.sh" ]; then
   source "$(brew --prefix bash-git-prompt)/share/gitprompt.sh"
 fi
 
+#------- FUNCTIONS -------#
+
+## Docker
+
+# remove all containers
+drma() {
+    docker rm $(docker ps -q -a);
+}
+
+# remove all images
+drma() {
+    docker rmi $(docker iamges -q);
+}
 
 eval "$(rbenv init -)"
 export PATH=/usr/local/bin:/usr/local/sbin:$GOPATH/bin:$PATH:$HOME/.rbenv/bin:$EC2_HOME/bin
