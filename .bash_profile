@@ -11,7 +11,8 @@ export SBT_OPTS="-XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=256M"
 
 #-----------G0-------------#
 export GOVERSION=$(brew list go | head -n 1 | cut -d '/' -f 6)
-export GOROOT=$(brew --prefix)/Cellar/go/$GOVERSION
+#export GOROOT=/usr/local/opt/go/libexec/bin
+export GOROOT=$(brew --prefix)/Cellar/go/$GOVERSION/libexec
 export GOPATH=/Users/jerome/go
 
 #---------DOCKER-----------#
@@ -69,4 +70,4 @@ fi
 
 
 eval "$(rbenv init -)"
-export PATH=/usr/local/bin:/usr/local/sbin:$PATH:$HOME/.rbenv/bin:$GOPATH/bin:$EC2_HOME/bin
+export PATH=/usr/local/bin:/usr/local/sbin:$GOPATH/bin:$PATH:$HOME/.rbenv/bin:$EC2_HOME/bin
