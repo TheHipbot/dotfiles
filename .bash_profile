@@ -89,5 +89,15 @@ drmia() {
     docker rmi $(docker images -q);
 }
 
+# enter shell of container
+dent() {
+    docker exec -i -t $1 /bin/bash;
+}
+
+# shutdown all containers
+ddown () {
+    docker stop $(docker ps -q -a);
+}
+
 eval "$(rbenv init -)"
 export PATH=/usr/local/bin:/usr/local/sbin:$GOPATH/bin:$PATH:$HOME/.rbenv/bin:$EC2_HOME/bin
