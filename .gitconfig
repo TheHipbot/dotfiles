@@ -1,18 +1,19 @@
 [user]
-	email = jeremy@thehipbot.com
-	name = Jeremy \"TheHipbot\" Chambers
+		email = jeremy@thehipbot.com
+		name = Jeremy \"TheHipbot\" Chambers
 [push]
-    default = simple
+    	default = simple
 [alias]
-	# abbreviations
-    st = status -s
-    co = checkout
-    br = branch
-	co = checkout
-	cp = cherry-pick
-	stat = status
-	pullr = pull --rebase
+		# abbreviations
+		st = status
+		co = checkout
+		br = branch
+		co = checkout
+		cp = cherry-pick
+		pullr = pull --rebase
 [core]
-	editor = vim
-	autocrlf = false
-	excludesfile = ~/.gitignore_global
+		editor = vim
+		autocrlf = false
+		excludesfile = ~/.gitignore_global
+[credential]
+		helper = osxkeychain
