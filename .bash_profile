@@ -113,4 +113,4 @@ jchg() {
 }
 
 eval "$(rbenv init -)"
-export PATH=/usr/local/bin:/usr/local/sbin:$GOPATH/bin:$PATH:$HOME/.rbenv/bin:$EC2_HOME/bin
+export PATH=/usr/local/bin:/usr/local/sbin:$GOPATH/bin:$HOME/.rbenv/bin:$EC2_HOME/bin:$PATH
