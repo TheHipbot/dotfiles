@@ -103,8 +103,13 @@ dent() {
 }
 
 # shutdown all containers
-ddown () {
+ddown() {
     docker stop $(docker ps -q -a);
+}
+
+# change java version
+jchg() {
+	export JAVA_HOME=`/usr/libexec/java_home -v $1`;
 }
 
 eval "$(rbenv init -)"
