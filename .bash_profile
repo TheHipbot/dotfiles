@@ -107,9 +107,18 @@ ddown() {
     docker stop $(docker ps -q -a);
 }
 
+## Java
+
 # change java version
 jchg() {
 	export JAVA_HOME=`/usr/libexec/java_home -v $1`;
+}
+
+## Bash
+
+# mkdir and cd
+mcd() {
+	mkdir $1 && cd $_
 }
 
 eval "$(rbenv init -)"
