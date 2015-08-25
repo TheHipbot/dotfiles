@@ -13,7 +13,6 @@ export SBT_OPTS="-XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=256M"
 #-----------G0-------------#
 
 export GOVERSION=$(brew list go | head -n 1 | cut -d '/' -f 6)
-#export GOROOT=/usr/local/opt/go/libexec/bin
 export GOROOT=$(brew --prefix)/Cellar/go/$GOVERSION/libexec
 export GOPATH=/Users/jerome/go
 
@@ -22,6 +21,10 @@ export GOPATH=/Users/jerome/go
 export DOCKER_HOST=tcp://127.0.0.1:2376
 export DOCKER_CERT_PATH=~/.boot2docker/certs/boot2docker-vm
 export DOCKER_TLS_VERIFY=1
+
+#---------GITHUB----------#
+
+source ./.github-creds
 
 #---------------- ALIASES --------------------------#
 
@@ -73,8 +76,8 @@ export EC2_HOME=$AWS_HOME/ec2
 #----- GIT -----#
 
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
-    . $(brew --prefix)/etc/bash_completion
-    source $(brew --prefix)/etc/bash_completion.d/git-completion.bash
+  . $(brew --prefix)/etc/bash_completion
+  source $(brew --prefix)/etc/bash_completion.d/git-completion.bash
 fi
 
 if [ -f "$(brew --prefix bash-git-prompt)/share/gitprompt.sh" ]; then
