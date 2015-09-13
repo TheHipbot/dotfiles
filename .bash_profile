@@ -73,7 +73,15 @@ export AWS_AUTO_SCALING_HOME=$AWS_HOME/autoscaling
 export EC2_HOME=$AWS_HOME/ec2
 
 
-#----- GIT -----#
+#----- INCLUDES -----#
+
+if [ -f $AWS_CREDENTIALS/aws-key-vars ]; then
+    source $AWS_CREDENTIALS/aws-key-vars
+fi
+
+if [ -f ./.github-creds ]; then
+    source ./.github-creds
+fi
 
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
   . $(brew --prefix)/etc/bash_completion
