@@ -16,16 +16,6 @@ export GOVERSION=$(brew list go | head -n 1 | cut -d '/' -f 6)
 export GOROOT=$(brew --prefix)/Cellar/go/$GOVERSION/libexec
 export GOPATH=/Users/jerome/go
 
-#---------DOCKER-----------#
-
-export DOCKER_HOST=tcp://127.0.0.1:2376
-export DOCKER_CERT_PATH=~/.boot2docker/certs/boot2docker-vm
-export DOCKER_TLS_VERIFY=1
-
-#---------GITHUB----------#
-
-source ./.github-creds
-
 #---------------- ALIASES --------------------------#
 
 ## Bash
@@ -79,8 +69,8 @@ if [ -f $AWS_CREDENTIALS/aws-key-vars ]; then
     source $AWS_CREDENTIALS/aws-key-vars
 fi
 
-if [ -f ./.github-creds ]; then
-    source ./.github-creds
+if [ -f ~/.github-creds ]; then
+    source ~/.github-creds
 fi
 
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
@@ -132,5 +122,10 @@ mcd() {
 	mkdir $1 && cd $_
 }
 
+# rbenv
 eval "$(rbenv init -)"
+
+# docker
+eval "$(docker-machine env local)"
+
 export PATH=/usr/local/bin:/usr/local/sbin:$GOPATH/bin:$HOME/.rbenv/bin:$EC2_HOME/bin:$PATH
