@@ -1,6 +1,6 @@
 export PS1="\u@\h \W [\$(date +%k:%M:%S)] > "
 
-export EDITOR=vim
+export EDITOR=emacs
 
 #---------JAVA--------#
 
@@ -15,6 +15,10 @@ export SBT_OPTS="-XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=256M"
 export GOVERSION=$(brew list go | head -n 1 | cut -d '/' -f 6)
 export GOROOT=$(brew --prefix)/Cellar/go/$GOVERSION/libexec
 export GOPATH=/Users/jerome/go
+
+#--------DOCKER--------#
+
+export DOCKER_MACHINE_ENV=local
 
 #---------------- ALIASES --------------------------#
 
@@ -113,10 +117,14 @@ mcd() {
 	mkdir $1 && cd $_
 }
 
+#---INITS---#
+
 # rbenv
 eval "$(rbenv init -)"
 
 # docker
-eval "$(docker-machine env local)"
+if [ "$(docker-machine status $DOCKER_MACHINE_ENV)" == "Running" ]; then
+    eval "$(docker-machine env $DOCKER_MACHINE_ENV)"
+fi
 
 export PATH=/usr/local/bin:/usr/local/sbin:$GOPATH/bin:$HOME/.rbenv/bin:$EC2_HOME/bin:$PATH
