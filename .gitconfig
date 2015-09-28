@@ -2,17 +2,17 @@
 		email = jeremy@thehipbot.com
 		name = Jeremy \"TheHipbot\" Chambers
 [push]
-    	default = simple
+		default = simple
 [alias]
 		# abbreviations
 		st = status
 		co = checkout
 		br = branch
 		co = checkout
-		cp = cherry-pick
+		chp = cherry-pick
 		pullr = pull --rebase
 [core]
-		editor = vim
+		editor = emacs
 		autocrlf = false
 		excludesfile = ~/.gitignore_global
 [credential]
