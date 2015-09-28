@@ -41,33 +41,7 @@ alias testing='ssh -i /Users/jerome/.aws/.keys/key-pairs/testing.pem ubuntu@ec2-
 alias riely='ssh cham@riely373.cdm.depaul.edu'
 alias school='ssh JCHAMB16@ctilinux1.cstcis.cti.depaul.edu'
 
-#---------------- AWS ENV VARIABLES ---------------------#
-
-export AWS_HOME=/Users/jerome/.aws
-export AWS_CREDENTIALS=$AWS_HOME/.keys
-export AWS_KEYPAIRS=$AWS_CREDENTIALS/key-pairs
-
-source $AWS_CREDENTIALS/aws-key-vars
-
-#--- CREDENTIALS ---#
-
-export EC2_PRIVATE_KEY=$AWS_CREDENTIALS/pk-T5O5D4Q37KR7AIPS3FBY2ZJQYWFWOQ3Z.pem
-export EC2_CERT=$AWS_CREDENTIALS/cert-T5O5D4Q37KR7AIPS3FBY2ZJQYWFWOQ3Z.pem
-
-#--- AUTO-SCALING ---#
-
-export AWS_AUTO_SCALING_HOME=$AWS_HOME/autoscaling
-
-#--- EC2 ---#
-
-export EC2_HOME=$AWS_HOME/ec2
-
-
 #----- INCLUDES -----#
-
-if [ -f $AWS_CREDENTIALS/aws-key-vars ]; then
-    source $AWS_CREDENTIALS/aws-key-vars
-fi
 
 if [ -f ~/.github-creds ]; then
     source ~/.github-creds
@@ -106,6 +80,23 @@ dent() {
 # shutdown all containers
 ddown() {
     docker stop $(docker ps -q -a);
+}
+
+# Machine
+
+# start env
+dmstart() {
+    docker-machine start $1
+}
+
+# stop env
+dmstop() {
+    docker-machine stop $1
+}
+
+# connect env
+dmenv() {
+    eval "$(docker-machine env $1)"
 }
 
 ## Java
