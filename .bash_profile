@@ -64,6 +64,15 @@ fi
 
 #------- FUNCTIONS -------#
 
+## SSH
+
+# ssh to instance with keypair
+# @var keypair name (with ext)
+# @var user@host
+sshk() {
+    ssh -i "$HOME/.ssh/$1" $2
+}
+
 ## Docker
 
 # remove all containers
