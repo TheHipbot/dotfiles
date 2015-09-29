@@ -127,4 +127,4 @@ if [ "$(docker-machine status $DOCKER_MACHINE_ENV)" == "Running" ]; then
     eval "$(docker-machine env $DOCKER_MACHINE_ENV)"
 fi
 
-export PATH=/usr/local/bin:/usr/local/sbin:$GOPATH/bin:$HOME/.rbenv/bin:$EC2_HOME/bin:$PATH
+export PATH=/usr/local/bin:/usr/local/sbin:$GOPATH/bin:$HOME/.rbenv/bin:$PATH
