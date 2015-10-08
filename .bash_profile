@@ -25,6 +25,7 @@ export DOCKER_MACHINE_ENV=local
 ## Bash
 alias lart='ls -lart'
 alias paux='ps -aux'
+alias repos='cd ~/repos'
 
 ## Docker
 alias dip="docker inspect --format '{{ .NetworkSettings.IPAddress }}'"
