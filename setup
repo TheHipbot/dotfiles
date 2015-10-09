@@ -26,7 +26,16 @@ OptionParser.new do |opts|
   opts.on("-l", "--links-only") do |p|
     options[:onlylinks] = true
   end
+
+  opts.on("-f", "--full-monty") do |p|
+    options[:fullmonty] = true
+  end
 end.parse!
+
+if options[:fullmonty]
+  # TODO install homebrew, update, pull pkgs from brew-pkgs file
+  #      install rbenv, ruby, gems
+end
 
 # symlink files/folders
 files.each do |f|

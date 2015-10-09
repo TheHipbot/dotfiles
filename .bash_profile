@@ -140,7 +140,9 @@ mcd() {
 #---INITS---#
 
 # rbenv
-eval "$(rbenv init -)"
+if which rbenv > /dev/null; then
+  eval "$(rbenv init -)"
+fi
 
 # docker
 if [ "$(docker-machine status $DOCKER_MACHINE_ENV)" == "Running" ]; then
