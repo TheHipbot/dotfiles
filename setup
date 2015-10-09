@@ -11,6 +11,7 @@ options[:onlylinks] = false
 # array of files/folders to symlink
 files = %w{
   .bash_profile
+  .emacs
   .gitconfig
   .gitignore_global
   .tmux.conf
