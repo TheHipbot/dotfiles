@@ -8,3 +8,6 @@
    t)
 (require 'auto-complete)
 (global-auto-complete-mode t)
+(require 'neotree)
+(global-set-key [f8] 'neotree-toggle)
+(setq neo-window-width 40)
