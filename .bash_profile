@@ -65,12 +65,16 @@ fi
 
 if [ -f /Users/jerome/.google-cloud-sdk/path.bash.inc ]; then
   # The next line updates PATH for the Google Cloud SDK.
-  source '/Users/jerome/.google-cloud-sdk/path.bash.inc'
+  source ~/.google-cloud-sdk/path.bash.inc
 fi
 
 if [ -f /Users/jerome/.google-cloud-sdk/completion.bash.inc ]; then
   # The next line enables shell command completion for gcloud.
-  source '/Users/jerome/.google-cloud-sdk/completion.bash.inc'
+  source ~/.google-cloud-sdk/completion.bash.inc
+fi
+
+if [ -f ~/.creds ]; then
+  source ~/.creds
 fi
 
 #------- FUNCTIONS -------#
