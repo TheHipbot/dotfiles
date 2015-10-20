@@ -11,3 +11,5 @@
 (require 'neotree)
 (global-set-key [f8] 'neotree-toggle)
 (setq neo-window-width 40)
+(setq-default indent-tabs-mode nil)
+(setq tab-width 2)
