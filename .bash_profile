@@ -34,18 +34,6 @@ alias drund="docker run -d -P"
 
 #------------ SSH COMMANDS -------------#
 
-#---AWS---#
-
-alias hipbot='ssh -i /Users/jerome/.aws/.keys/key-pairs/hipbot.pem ubuntu@ec2-54-243-58-232.compute-1.amazonaws.com'
-alias SSH_HIPBOT='ssh -i /Users/jerome/.aws/.keys/key-pairs/hipbot.pem ubuntu@ec2-54-243-58-232.compute-1.amazonaws.com'
-alias dm='ssh -i /Users/jerome/.aws/.keys/key-pairs/distantminds.pem ec2-user@ec2-54-243-61-208.compute-1.amazonaws.com'
-alias testing='ssh -i /Users/jerome/.aws/.keys/key-pairs/testing.pem ubuntu@ec2-54-235-68-115.compute-1.amazonaws.com'
-
-#--SCHOOL--#
-
-alias riely='ssh cham@riely373.cdm.depaul.edu'
-alias school='ssh JCHAMB16@ctilinux1.cstcis.cti.depaul.edu'
-
 #----- INCLUDES -----#
 
 if [ -f ~/.github-creds ]; then
