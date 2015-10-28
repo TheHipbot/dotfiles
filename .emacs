@@ -11,5 +11,5 @@
 (require 'neotree)
 (global-set-key [f8] 'neotree-toggle)
 (setq neo-window-width 40)
-(setq-default indent-tabs-mode nil)
-(setq tab-width 2)
+(setq tab-width 4)
+(add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
