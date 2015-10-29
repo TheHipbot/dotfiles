@@ -41,28 +41,28 @@ if [ -f ~/.github-creds ]; then
 fi
 
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
-  . $(brew --prefix)/etc/bash_completion
-  source $(brew --prefix)/etc/bash_completion.d/git-completion.bash
+    . $(brew --prefix)/etc/bash_completion
+    source $(brew --prefix)/etc/bash_completion.d/git-completion.bash
 fi
 
 if [ -f "$(brew --prefix bash-git-prompt)/share/gitprompt.sh" ]; then
-  GIT_PROMPT_ONLY_IN_REPO=1
-  GIT_PROMPT_THEME=Default
-  source "$(brew --prefix bash-git-prompt)/share/gitprompt.sh"
+    GIT_PROMPT_ONLY_IN_REPO=1
+    GIT_PROMPT_THEME=Default
+    source "$(brew --prefix bash-git-prompt)/share/gitprompt.sh"
 fi
 
 if [ -f /Users/jerome/.google-cloud-sdk/path.bash.inc ]; then
-  # The next line updates PATH for the Google Cloud SDK.
-  source ~/.google-cloud-sdk/path.bash.inc
+    # The next line updates PATH for the Google Cloud SDK.
+    source ~/.google-cloud-sdk/path.bash.inc
 fi
 
 if [ -f /Users/jerome/.google-cloud-sdk/completion.bash.inc ]; then
-  # The next line enables shell command completion for gcloud.
-  source ~/.google-cloud-sdk/completion.bash.inc
+    # The next line enables shell command completion for gcloud.
+    source ~/.google-cloud-sdk/completion.bash.inc
 fi
 
 if [ -f ~/.creds ]; then
-  source ~/.creds
+    source ~/.creds
 fi
 
 #------- FUNCTIONS -------#
@@ -119,21 +119,21 @@ dmenv() {
 
 # change java version
 jchg() {
-	export JAVA_HOME=`/usr/libexec/java_home -v $1`;
+    export JAVA_HOME=`/usr/libexec/java_home -v $1`;
 }
 
 ## Bash
 
 # mkdir and cd
 mcd() {
-	mkdir $1 && cd $_
+    mkdir $1 && cd $_
 }
 
 #---INITS---#
 
 # rbenv
 if which rbenv > /dev/null; then
-  eval "$(rbenv init -)"
+    eval "$(rbenv init -)"
 fi
 
 # docker
