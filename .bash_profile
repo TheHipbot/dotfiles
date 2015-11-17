@@ -24,8 +24,12 @@ export DOCKER_MACHINE_ENV=local
 
 ## Bash
 alias lart='ls -lart'
-alias paux='ps -aux'
+alias paux='ps aux'
 alias repos='cd ~/repos'
+alias gdocs='cd ~/Google\ Drive'
+alias prof='emacs ~/.bash_profile'
+alias nxconf='emacs /usr/local/etc/nginx/nginx.conf'
+alias reprof='source ~/.bash_profile'
 
 ## Docker
 alias dip="docker inspect --format '{{ .NetworkSettings.IPAddress }}'"
