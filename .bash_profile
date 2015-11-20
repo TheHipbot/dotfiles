@@ -55,12 +55,12 @@ if [ -f "$(brew --prefix bash-git-prompt)/share/gitprompt.sh" ]; then
     source "$(brew --prefix bash-git-prompt)/share/gitprompt.sh"
 fi
 
-if [ -f /Users/jerome/.google-cloud-sdk/path.bash.inc ]; then
+if [ -f ~/.google-cloud-sdk/path.bash.inc ]; then
     # The next line updates PATH for the Google Cloud SDK.
     source ~/.google-cloud-sdk/path.bash.inc
 fi
 
-if [ -f /Users/jerome/.google-cloud-sdk/completion.bash.inc ]; then
+if [ -f ~/.google-cloud-sdk/completion.bash.inc ]; then
     # The next line enables shell command completion for gcloud.
     source ~/.google-cloud-sdk/completion.bash.inc
 fi
