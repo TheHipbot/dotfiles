@@ -9,14 +9,8 @@ options = {}
 options[:onlylinks] = false
 
 # array of files/folders to symlink
-files = %w{
-  .bash_profile
-  .emacs
-  .gitconfig
-  .gitignore_global
-  .tmux.conf
-  .tmuxinator
-}
+Dir.chdir(File.dirname(__FILE__))
+files = Dir['{*.symlink,.*.symlink}']
 
 # parse command line options
 OptionParser.new do |opts|
@@ -40,9 +34,11 @@ end
 
 # symlink files/folders
 files.each do |f|
-  if File.exist?("#{ENV['HOME']}/#{f}")
-    puts "File #{f} already exists in home folder, SKIPPING"
+  basename = File.basename(f,File.extname(f))
+  puts basename
+  if File.exist?("#{ENV['HOME']}/#{basename}")
+    puts "File #{basename} already exists in home folder, SKIPPING"
   else
-    File.symlink("#{File.expand_path(File.dirname(__FILE__))}/#{f}", "#{ENV['HOME']}/#{f}")
+    File.symlink("#{File.expand_path(File.dirname(__FILE__))}/#{f}", "#{ENV['HOME']}/#{basename}")
   end
 end
