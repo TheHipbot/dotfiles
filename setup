@@ -8,10 +8,6 @@ options = {}
 
 options[:onlylinks] = false
 
-# array of files/folders to symlink
-Dir.chdir(File.dirname(__FILE__))
-files = Dir['{*.symlink,.*.symlink}']
-
 # parse command line options
 OptionParser.new do |opts|
   opts.on("-p [ARG]", "--platform [ARG]") do |p|
@@ -27,18 +23,52 @@ OptionParser.new do |opts|
   end
 end.parse!
 
-if options[:fullmonty]
-  # TODO install homebrew, update, pull pkgs from brew-pkgs file
-  #      install rbenv, ruby, gems
+def run_symlinks(options)
+  # array of files/folders to symlink
+  Dir.chdir(File.dirname(__FILE__))
+  files = Dir['{*.symlink,.*.symlink}']
+
+  if options.has_key?(:platform)
+    files = files + Dir["{#{options[:platform]}/*.symlink,.#{options[:platform]}/*.symlink}"]
+  end
+
+  symlink files/folders
+  files.each do |f|
+    basename = File.basename(f,File.extname(f))
+    if File.exist?("#{ENV['HOME']}/#{basename}")
+      puts "File/Dir #{basename} already exists in home folder, SKIPPING"
+    else
+      File.symlink("#{File.expand_path(File.dirname(__FILE__))}/#{f}", "#{ENV['HOME']}/#{basename}")
+      puts "File/Dir #{basename} symlinked to home folder"
+    end
+  end
 end
 
-# symlink files/folders
-files.each do |f|
-  basename = File.basename(f,File.extname(f))
-  puts basename
-  if File.exist?("#{ENV['HOME']}/#{basename}")
-    puts "File #{basename} already exists in home folder, SKIPPING"
-  else
-    File.symlink("#{File.expand_path(File.dirname(__FILE__))}/#{f}", "#{ENV['HOME']}/#{basename}")
+def run_scripts(options)
+  # TODO install homebrew, update, pull pkgs from brew-pkgs file
+  #      install rbenv, ruby, gems
+  Dir.chdir(File.dirname(__FILE__))
+  scripts = Dir['{scripts/*}']
+
+  if options.has_key?(:platform)
+    scripts = scripts + Dir["{#{options[:platform]}/scripts/*}"]
   end
+
+  scripts.each do |s|
+    system "#{File.expand_path(File.dirname(__FILE__))}/#{s}"
+    if $?.exitstatus == 0
+      puts "script #{s} has successfully executed"
+    else
+      puts "script #{s} failed"
+    end
+  end
+end
+
+if options[:fullmonty]
+  run_symlinks(options)
+  run_scripts(options)
+end
+
+if options[:onlylinks]
+  run_symlinks(options)
 end
