@@ -1,6 +1,8 @@
 export PS1="\u@\h \W [\$(date +%k:%M:%S)] > "
 
 export EDITOR=emacs
+export CLICOLOR=1
+export LSCOLORS=GxFxCxDxBxegedabagaced
 
 #---------JAVA--------#
 
@@ -30,6 +32,7 @@ alias gdocs='cd ~/Google\ Drive'
 alias prof='emacs ~/.bash_profile'
 alias nxconf='emacs /usr/local/etc/nginx/nginx.conf'
 alias reprof='source ~/.bash_profile'
+alias tb="nc termbin.com 9999"
 
 ## Docker
 alias dip="docker inspect --format '{{ .NetworkSettings.IPAddress }}'"
