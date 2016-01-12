@@ -3,6 +3,8 @@
 		name = Jeremy \"TheHipbot\" Chambers
 [push]
 		default = simple
+[pull]
+        default = simple
 [alias]
 		# abbreviations
 		st = status
