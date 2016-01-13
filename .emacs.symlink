@@ -1,11 +1,30 @@
+(setq package-list '(auto-complete
+                     go-autocomplete
+                     go-mode
+                     haskell-mode
+                     multiple-cursors
+                     neotree
+                     popup))
+
 (package-initialize)
+
+
 (let ((default-directory "/usr/local/share/emacs/site-lisp/"))
   (normal-top-level-add-subdirs-to-load-path))
+
 (require 'package)
   (add-to-list
    'package-archives
    '("melpa" . "http://melpa.org/packages/")
    t)
+
+(unless package-archive-contents
+  (package-refresh-contents))
+
+(dolist (package package-list)
+  (unless (package-installed-p package)
+    (package-install package)))
+
 (require 'auto-complete)
 (global-auto-complete-mode t)
 (require 'neotree)
