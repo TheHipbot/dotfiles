@@ -45,8 +45,6 @@ def run_symlinks(options)
 end
 
 def run_scripts(options)
-  # TODO install homebrew, update, pull pkgs from brew-pkgs file
-  #      install rbenv, ruby, gems
   Dir.chdir(File.dirname(__FILE__))
   scripts = Dir['{scripts/*}']
 
