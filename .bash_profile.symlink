@@ -124,6 +124,7 @@ dmenv() {
 
 ## Java
 
+## TODO check if this can work with cask installation of java
 # change java version
 jchg() {
     export JAVA_HOME=`/usr/libexec/java_home -v $1`;

@@ -7,6 +7,9 @@ require 'optparse'
 options = {}
 
 options[:onlylinks] = false
+options[:platform] = 'osx'
+
+# TODO create OS X settings script
 
 # parse command line options
 OptionParser.new do |opts|
