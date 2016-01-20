@@ -1,3 +1,4 @@
+(require 'cl)
 (setq my-packages '(auto-complete git-gutter go-autocomplete go-mode
                     haskell-mode multiple-cursors neotree
                     clojure-mode popup solarized-theme))
