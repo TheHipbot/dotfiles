@@ -2,5 +2,8 @@
 #
 # copy iterm plist and read in settings
 
-cp ../com.googlecode.iterm2.plist $HOME/Library/Preferences/com.googlecode.iterm2.plist
-defaults read com.googlecode.iterm2
+open -a iTerm
+osascript -e 'quit app "iTerm"'
+defaults delete com.googlecode.iterm2
+cp osx/com.googlecode.iterm2.plist $HOME/Library/Preferences/com.googlecode.iterm2.plist
+defaults read -app iTerm
