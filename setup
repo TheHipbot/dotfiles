@@ -35,7 +35,7 @@ def run_symlinks(options)
     files = files + Dir["{#{options[:platform]}/*.symlink,.#{options[:platform]}/*.symlink}"]
   end
 
-  symlink files/folders
+  # symlink files/folders
   files.each do |f|
     basename = File.basename(f,File.extname(f))
     if File.exist?("#{ENV['HOME']}/#{basename}")
