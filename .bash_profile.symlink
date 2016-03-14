@@ -2,6 +2,9 @@ export EDITOR=emacs
 export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
 
+#------POWERTRAIN-----#
+export POWERTRAIN=$HOME/powertrain/Makefile
+
 #---------JAVA--------#
 
 export JAVA_VERSION=1.8
