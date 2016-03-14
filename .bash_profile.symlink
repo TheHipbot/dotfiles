@@ -7,7 +7,7 @@ export POWERTRAIN=$HOME/powertrain/Makefile
 
 #---------JAVA--------#
 
-export JAVA_VERSION=1.8
+export JAVA_VERSION=1.7
 export JAVA_HOME=`/usr/libexec/java_home -v $JAVA_VERSION`
 
 export SCALA_HOME=/usr/local/share/scala
