@@ -1,0 +1,28 @@
+#!/bin/bash
+SEMVER=${1:-"patch"}
+​
+function bump(){
+    if [ -z "$(git status --porcelain)" ]; then
+        npm version $SEMVER && git push && git push --tags && npm publish
+    else
+        echo "no"
+    fi
+}
+​
+function doublecheck(){
+    echo "Really?"
+    select yn in "Yes" "No"; do
+        case $yn in
+            Yes ) bump; break;;
+            No ) exit;;
+        esac
+    done
+}
+​
+echo "Are you sure?"
+select yn in "Yes" "No"; do
+    case $yn in
+        Yes ) doublecheck; break;;
+        No ) exit;;
+    esac
+done
