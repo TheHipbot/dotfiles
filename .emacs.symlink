@@ -2,7 +2,7 @@
 (setq my-packages '(auto-complete git-gutter go-autocomplete go-mode
                     haskell-mode multiple-cursors neotree
                     clojure-mode popup solarized-theme
-		    alchemist erlang))
+		    alchemist erlang tern tern-auto-complete))
 
 (package-initialize)
 (setq package-archives '(("gnu" . "https://elpa.gnu.org/packages/")
@@ -35,3 +35,5 @@
 (setq neo-window-width 40)
 (setq tab-width 4)
 (add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
+(require 'tern-auto-complete)
+(autoload 'tern-mode "tern.el" nil t)
