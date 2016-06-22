@@ -2,8 +2,8 @@ export EDITOR=emacs
 export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
 
-#------POWERTRAIN-----#
-export POWERTRAIN=$HOME/powertrain/Makefile
+#-----POWERTRAIN----#
+export POWERTRAIN_HOME=$HOME/.bin/powertrain
 
 #---------JAVA--------#
 
@@ -150,4 +150,4 @@ if which thefuck > /dev/null; then
    eval "$(thefuck --alias)"
 fi
 
-export PATH=$HOME/.bin:/usr/local/bin:/usr/local/sbin:$GOPATH/bin:$HOME/.rbenv/bin:$PATH
+export PATH=$HOME/.bin:/usr/local/bin:/usr/local/sbin:$GOPATH/bin:$HOME/.rbenv/bin:$POWERTRAIN_HOME:$PATH
