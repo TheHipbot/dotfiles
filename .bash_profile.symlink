@@ -143,9 +143,4 @@ if which thefuck > /dev/null; then
    eval "$(thefuck --alias)"
 fi
 
-# docker
-if [ "$(docker-machine status $DOCKER_MACHINE_ENV)" == "Running" ]; then
-    eval "$(docker-machine env $DOCKER_MACHINE_ENV)"
-fi
-
 export PATH=$HOME/.bin:/usr/local/bin:/usr/local/sbin:$GOPATH/bin:$HOME/.rbenv/bin:$PATH
