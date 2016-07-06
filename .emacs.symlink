@@ -1,3 +1,4 @@
+;; set required packages and install if not already
 (require 'cl)
 (setq my-packages '(auto-complete git-gutter go-autocomplete go-mode
                     haskell-mode multiple-cursors neotree
@@ -33,7 +34,15 @@
 (require 'neotree)
 (global-set-key [f8] 'neotree-toggle)
 (setq neo-window-width 40)
+
+;; tabbing
+(setq-default indent-tabs-mode nil)
 (setq tab-width 4)
+(setq-default tab-width 4)
+(defvaralias 'c-basic-offset 'tab-width)
 (add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
+(electric-indent-mode 1)
+(setq-default tab-always-indent t)
+
 (require 'tern-auto-complete)
 (autoload 'tern-mode "tern.el" nil t)
