@@ -18,6 +18,7 @@ cask "vagrant"
 
 brew "ack"
 brew "awscli"
+brew "bash"
 brew "bash-completion"
 brew "bash-git-prompt"
 brew "brew-cask"
