@@ -56,6 +56,5 @@ bind C-s set-window-option synchronize-panes
 bind P pipe-pane -o "cat >>~/#W.log" \; display "Toggled logging to ~/#W.log"
 
 # copy/paste OS X clipboard
-set-option -g default-command "reattach-to-user-namespace -l bash"
-bind C-c run "tmux show-buffer | reattach-to-user-namespace pbcopy"
-bind C-v run "reattach-to-user-namespace pbpaste | tmux load-buffer - && tmux paste-buffer"
+bind C-c run "tmux show-buffer | pbcopy"
+bind C-v run "pbpaste | tmux load-buffer - && tmux paste-buffer"
