@@ -133,6 +133,13 @@ mcd() {
     mkdir $1 && cd $_
 }
 
+## Other
+
+# get weather for given city
+weather() {
+    curl "wttr.in/$1"
+}
+
 #---INITS---#
 
 # rbenv
