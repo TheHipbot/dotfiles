@@ -1,10 +1,9 @@
-;; set required packages and install if not already
 (require 'cl)
 (setq my-packages '(auto-complete git-gutter go-autocomplete go-mode
                     haskell-mode multiple-cursors neotree
                     clojure-mode popup solarized-theme
                     alchemist erlang tern tern-auto-complete
-                    intero))
+                    intero flymake-go go-errcheck))
 
 (package-initialize)
 (setq package-archives '(("gnu" . "https://elpa.gnu.org/packages/")
@@ -31,6 +30,8 @@
 (require 'git-gutter)
 (global-git-gutter-mode t)
 (require 'auto-complete)
+(require 'flymake-go)
+
 (global-auto-complete-mode t)
 (require 'neotree)
 (global-set-key [f8] 'neotree-toggle)
@@ -47,3 +48,16 @@
 
 (require 'tern-auto-complete)
 (autoload 'tern-mode "tern.el" nil t)
+
+;; Copy and Paste
+(defun copy-from-osx ()
+(shell-command-to-string "pbpaste"))
+
+(defun paste-to-osx (text &optional push)
+(let ((process-connection-type nil))
+(let ((proc (start-process "pbcopy" "*Messages*" "pbcopy")))
+(process-send-string proc text)
+(process-send-eof proc))))
+
+(setq interprogram-cut-function 'paste-to-osx)
+(setq interprogram-paste-function 'copy-from-osx) 
