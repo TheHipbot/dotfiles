@@ -3,7 +3,8 @@
 (setq my-packages '(auto-complete git-gutter go-autocomplete go-mode
                     haskell-mode multiple-cursors neotree
                     clojure-mode popup solarized-theme
-		    alchemist erlang tern tern-auto-complete))
+                    alchemist erlang tern tern-auto-complete
+                    intero))
 
 (package-initialize)
 (setq package-archives '(("gnu" . "https://elpa.gnu.org/packages/")
@@ -40,7 +41,7 @@
 (setq tab-width 4)
 (setq-default tab-width 4)
 (defvaralias 'c-basic-offset 'tab-width)
-(add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
+(add-hook 'haskell-mode-hook 'intero-mode)
 (electric-indent-mode 1)
 (setq-default tab-always-indent t)
 
