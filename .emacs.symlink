@@ -3,7 +3,7 @@
                     haskell-mode multiple-cursors neotree
                     clojure-mode popup solarized-theme
                     alchemist erlang tern tern-auto-complete
-                    intero flymake-go go-errcheck))
+                    intero flymake-go go-errcheck multiple-cursors))
 
 (package-initialize)
 (setq package-archives '(("gnu" . "https://elpa.gnu.org/packages/")
@@ -60,4 +60,12 @@
 (process-send-eof proc))))
 
 (setq interprogram-cut-function 'paste-to-osx)
-(setq interprogram-paste-function 'copy-from-osx) 
+(setq interprogram-paste-function 'copy-from-osx)
+
+;; Multiple cursors setup
+;; TODO figure out how to map C-S from terminal
+(require 'multiple-cursors)
+(global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
+(global-set-key (kbd "C->") 'mc/mark-next-like-this)
+(global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
+(global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
