@@ -3,7 +3,8 @@
                     haskell-mode multiple-cursors neotree
                     clojure-mode popup solarized-theme
                     alchemist erlang tern tern-auto-complete
-                    intero flymake-go go-errcheck multiple-cursors))
+                    intero flymake-go go-errcheck multiple-cursors
+                    exec-path-from-shell))
 
 (package-initialize)
 (setq package-archives '(("gnu" . "https://elpa.gnu.org/packages/")
@@ -69,3 +70,18 @@
 (global-set-key (kbd "C->") 'mc/mark-next-like-this)
 (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
 (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
+
+;; Call gofmt on save for go code
+(setq exec-path (cons "/usr/local/go/bin" exec-path))
+(add-to-list 'exec-path "/Users/tleyden/Development/gocode/bin")
+
+(defun go-mode-custom-hook ()
+  ;; Call Gofmt before saving
+  (add-hook 'before-save-hook 'gofmt-before-save)
+  ;; Customize compile command to run go build
+  (if (not (string-match "go" compile-command))
+      (set (make-local-variable 'compile-command)
+           "go build -v && go test -v && go vet"))
+  ;; Godef jump key binding
+  (local-set-key (kbd "M-.") 'godef-jump))
+(add-hook 'go-mode-hook 'go-mode-custom-hook)
