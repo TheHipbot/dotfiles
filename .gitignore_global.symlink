@@ -1,6 +1,7 @@
 ### Emacs ###
 *~
 \#*\#
+.\#*
 
 ### JetBrains ###
 *.iml
@@ -8,3 +9,8 @@
 
 ### OS X ###
 .DS_Store
+
+### JAVA ###
+target/
+build/
+**/*.class
