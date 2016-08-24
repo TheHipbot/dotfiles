@@ -4,7 +4,7 @@
                     clojure-mode popup solarized-theme
                     alchemist erlang tern tern-auto-complete
                     intero flymake-go go-errcheck multiple-cursors
-                    exec-path-from-shell))
+                    exec-path-from-shell yaml-mode))
 
 (package-initialize)
 (setq package-archives '(("gnu" . "https://elpa.gnu.org/packages/")
