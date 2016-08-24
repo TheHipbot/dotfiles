@@ -44,7 +44,6 @@
 (setq-default tab-width 4)
 (defvaralias 'c-basic-offset 'tab-width)
 (add-hook 'haskell-mode-hook 'intero-mode)
-(electric-indent-mode 1)
 (setq-default tab-always-indent t)
 
 (require 'tern-auto-complete)
@@ -52,7 +51,7 @@
 
 ;; Copy and Paste
 (defun copy-from-osx ()
-(shell-command-to-string "pbpaste"))
+  (shell-command-to-string "pbpaste"))
 
 (defun paste-to-osx (text &optional push)
 (let ((process-connection-type nil))
@@ -73,7 +72,7 @@
 
 ;; Call gofmt on save for go code
 (setq exec-path (cons "/usr/local/go/bin" exec-path))
-(add-to-list 'exec-path "/Users/tleyden/Development/gocode/bin")
+(add-to-list 'exec-path "/Users/jeremychambers/go/bin")
 
 (defun go-mode-custom-hook ()
   ;; Call Gofmt before saving
