@@ -1,3 +1,13 @@
+;; global variables
+(setq
+  inhibit-startup-screen t
+  create-lockfiles nil
+  make-backup-files nil
+  column-number-mode t
+  scroll-error-top-bottom t
+  use-package-always-ensure t
+  sentence-end-double-space nil)
+
 (require 'cl)
 (setq my-packages '(auto-complete git-gutter go-autocomplete go-mode
                     haskell-mode multiple-cursors neotree
@@ -25,7 +35,7 @@
     (when (not (package-installed-p p))
       (package-install p))))
 
-(show-paren-mode 1)
+(show-paren-mode t)
 (global-linum-mode t)
 
 (require 'git-gutter)
@@ -37,6 +47,9 @@
 (require 'neotree)
 (global-set-key [f8] 'neotree-toggle)
 (setq neo-window-width 40)
+
+;; modes
+(electric-indent-mode 0)
 
 ;; tabbing
 (setq-default indent-tabs-mode nil)
