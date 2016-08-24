@@ -1,1 +1,4 @@
 .cask/
+**/elpa/
+**/auto-save-list/
+*.dat
