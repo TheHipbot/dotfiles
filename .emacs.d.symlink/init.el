@@ -120,7 +120,12 @@
   (global-auto-complete-mode t)
 
   (use-package go-autocomplete
-    :demand t))
+    :pin melpa-stable
+    :demand t
+    :config
+    (defun auto-complete-for-go ()
+      (auto-complete-mode 1))
+    (add-hook 'go-mode-hook 'auto-complete-for-go)))
 
 ;; neotree
 (use-package neotree
