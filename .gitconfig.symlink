@@ -4,6 +4,7 @@
 [push]
 		default = simple
 [pull]
+        rebase = true
         default = simple
 [alias]
 		# abbreviations
