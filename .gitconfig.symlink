@@ -1,6 +1,6 @@
 [user]
 		email = jeremy@thehipbot.com
-		name = Jeremy \"TheHipbot\" Chambers
+		name = Jeremy Chambers
 [push]
 		default = simple
 [pull]
