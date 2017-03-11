@@ -175,7 +175,9 @@
 (use-package git-gutter
   :ensure t
   :config
-  (global-git-gutter-mode t))
+  (global-git-gutter-mode t)
+  (custom-set-variables
+   '(git-gutter:update-interval 2)))
 
 
 ;; misc
