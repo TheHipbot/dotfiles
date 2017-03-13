@@ -154,3 +154,8 @@ if which thefuck > /dev/null; then
 fi
 
 export PATH=$HOME/.bin:/usr/local/bin:/usr/local/sbin:$GOPATH/bin:$HOME/.rbenv/bin:$POWERTRAIN_HOME:$PATH
+# begin bitcar
+export BITCAR_ROOT_DIR='/Users/jeremychambers/bitcar-repos'
+source $HOME/.bitcar/cli.sh
+source $HOME/.bitcar/completions.sh
+# end bitcar
