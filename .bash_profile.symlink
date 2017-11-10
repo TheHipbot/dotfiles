@@ -3,7 +3,7 @@ export CLICOLOR=1
 
 #---------JAVA--------#
 
-export JAVA_VERSION=1.8
+export JAVA_VERSION=9
 export JAVA_HOME=`/usr/libexec/java_home -v $JAVA_VERSION`
 
 export SCALA_HOME=/usr/local/share/scala
@@ -70,15 +70,6 @@ fi
 
 #------- FUNCTIONS -------#
 
-## SSH
-
-# ssh to instance with keypair
-# @var keypair name (with ext)
-# @var user@host
-sshk() {
-    ssh -i "$HOME/.ssh/$1" $2
-}
-
 ## Docker
 
 # remove all containers
@@ -101,21 +92,11 @@ ddown() {
     docker stop $(docker ps -q -a);
 }
 
-# Machine
-
-# start env
-dmstart() {
-    docker-machine start $1
-}
-
-# stop env
-dmstop() {
-    docker-machine stop $1
-}
-
-# connect env
-dmenv() {
-    eval "$(docker-machine env $1)"
+# remove all swarm services
+swarm-service-rm() {
+    for s in `docker service ls -q`; do
+        docker service rm $s
+    done
 }
 
 ## Java
@@ -147,3 +128,10 @@ if which thefuck > /dev/null; then
 fi
 
 export PATH=$HOME/.bin:/usr/local/bin:/usr/local/sbin:$GOPATH/bin:$HOME/.rbenv/bin:$PATH
+
+# begin bitcar
+export BITCAR_WORKSPACE_DIR="/Users/jeremychambers/repos"
+export BITCAR_EDITOR_CMD="emacs"
+source $HOME/.bitcar/cli.sh
+source $HOME/.bitcar/completions.sh
+# end bitcar
