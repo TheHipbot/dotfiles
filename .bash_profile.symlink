@@ -15,6 +15,10 @@ export GOVERSION=$(brew list go | head -n 1 | cut -d '/' -f 6)
 export GOROOT=$(go env GOROOT)
 export GOPATH=$HOME/go
 
+#-------ANSIBLE-------#
+
+export ANSIBLE_HOST_KEY_CHECKING=false
+
 #---------------- ALIASES --------------------------#
 
 ## Bash
