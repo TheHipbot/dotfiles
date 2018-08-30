@@ -11,9 +11,9 @@ export SBT_OPTS="-XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=256M"
 
 #-----------G0-------------#
 
-export GOVERSION=$(brew list go | head -n 1 | cut -d '/' -f 6)
 export GOROOT=$(go env GOROOT)
 export GOPATH=$HOME/go
+export GO111MODULE=on
 
 #-------ANSIBLE-------#
 

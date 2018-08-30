@@ -20,10 +20,10 @@
 
 ;; repositories
 (setq
- package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
+ package-archives '(("melpa-stable" . "http://stable.melpa.org/packages/")
+                    ("gnu" . "http://elpa.gnu.org/packages/")
                     ("org" . "http://orgmode.org/elpa/")
-                    ("melpa" . "http://melpa.org/packages/")
-                    ("melpa-stable" . "http://stable.melpa.org/packages/")))
+                    ("melpa" . "http://melpa.org/packages/")))
 
 ;; the package manager
 (require 'package)
@@ -116,6 +116,9 @@
   :ensure t
   :mode "\\.elm\\'")
 
+;; elixir mode
+(use-package alchemist)
+
 ;; additional plugins
 
 (use-package auto-complete
@@ -175,12 +178,19 @@
 (use-package git-gutter
   :ensure t
   :config
-  (global-git-gutter-mode t)
-  (custom-set-variables
-   '(git-gutter:update-interval 2)))
-
+  (global-git-gutter-mode t))
 
 ;; misc
+
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(git-gutter:update-interval 2)
+ '(package-selected-packages
+   (quote
+    (git-gutter mc-extras multiple-cursors neotree go-autocomplete auto-complete elm-mode ensime js2-mode dockerfile-mode markdown-mode yaml-mode groovy-mode intero go-mode folding use-package))))
 
 ;; tabbing
 (setq-default indent-tabs-mode nil)
@@ -201,14 +211,7 @@
 
 (setq interprogram-cut-function 'paste-to-osx)
 (setq interprogram-paste-function 'copy-from-osx)
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(package-selected-packages
-   (quote
-    (git-gutter mc-extras multiple-cursors neotree go-autocomplete auto-complete elm-mode ensime js2-mode dockerfile-mode markdown-mode yaml-mode groovy-mode intero go-mode folding use-package))))
+
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
