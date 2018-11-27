@@ -12,7 +12,8 @@ refs = .profile \
 scripts = homebrew.sh \
 		  node.sh \
 		  bitcar.sh \
-		  bash.sh
+		  bash.sh \
+		  rush.sh
 
 # init:
 # 	git submodule init && \
