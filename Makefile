@@ -13,14 +13,14 @@ scripts = homebrew.sh \
 		  node.sh \
 		  bitcar.sh \
 		  bash.sh \
-		  rush.sh
+		  rust.sh
 
 # init:
 # 	git submodule init && \
 # 	git submodule update
 
 # Targets to create symlinks
-symlinks: init $(refs)
+symlinks: $(refs)
 
 .PHONY: $(refs)
 $(refs):
@@ -37,6 +37,6 @@ $(scripts):
 
 .PHONY: whole-shebang
 whole-shebang: symlinks scripts
-	@echo install complete, be sure to resource your .bash_profile by running "source $$HOME/.bash_profile" or starting a new terminal session
+	@echo install complete, be sure to resource your .profile by running "source $$HOME/.profile" or starting a new terminal session
 
 .DEFAULT_GOAL := whole-shebang
