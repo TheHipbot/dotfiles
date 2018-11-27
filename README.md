@@ -29,3 +29,32 @@ the platform specified.
 
 The second argument could be `-l` or `--links-only` which will only run the symlinking task or `f` or `--full-monty` to 
 run both tasks.
+
+# TheHipbot's dotfiles
+
+## OS X
+
+### Setup
+
+Requires that you have XCode installed along with the cli tools.
+
+After cloning, you can install the dotfiles by running the following:
+
+    make
+
+### Usage
+
+Most of the configurations provided in these dotfiles will work automatically if you follow the steps above.
+
+Here is what the dotfiles will do to or install on your system:
+- create symlinks of the dotfiles in this repo to your home folder. these provide config to tools you use on your system, here's the rundown:
+  * git - will create a .gitconfig file and a global gitignore to ignore common file types that shouldn't be included in the repos
+  * .profile - a bash script that runs at the start of every terminal session for the user, it includes helper functions for bash, aliases, environment variables and more
+  * tmux.conf - a base configuration for tmux if you use it
+  * emacs - symlink the .emacs.d folder containing an init.el file, this will install a bunch of emacs packages and configuration if you ever start up emacs
+  * .bin - a folder container binaries and other executables which are added to your PATH
+- run scripts to do additional config and installations, here are the scripts (run in this order):
+  * homebrew.sh - installs homebrew if it is not already installed, taps the cardotcom homebrew tap, and runs homebrew bundle which installs all brew packages in the file Brewfile in this repo
+  * node.sh - installs the node version manager n and uses n to install the latest LTS version of node
+  * bitcar.sh - installs [bitcar](https://github.com/carsdotcom/bitcar) and runs bitcar setup (this requires user input)
+  * bash.sh - sets up bash 4 for the system

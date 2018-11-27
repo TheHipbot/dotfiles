@@ -1,13 +1,13 @@
 [user]
-		email = jeremy@thehipbot.com
-		name = Jeremy Chambers
+        email = jeremy@thehipbot.com
+        name = Jeremy Chambers
 [push]
-		default = simple
+        default = simple
 [pull]
         rebase = true
         default = simple
 [alias]
-		# abbreviations
+        # abbreviations
         st = status -s
         ch = checkout
         co = commit
@@ -111,10 +111,10 @@
         # line count for given author
         authorlines = "!f() { git log --author=\"$1\" --pretty=tformat: --numstat | awk '{ add += $1; subs += $2; loc += $1 - $2 } END { printf \"added lines: %s, removed lines: %s, total lines: %s\\n\", add, subs, loc }' -; }; f"
 [core]
-		editor = emacs
-		autocrlf = false
-		excludesfile = ~/.gitignore_global
+        editor = emacs
+        autocrlf = false
+        excludesfile = ~/.gitignore_global
 [credential]
-		helper = osxkeychain
+        helper = osxkeychain
 [url "git@github.com:"]
         insteadOf = https://github.com/
