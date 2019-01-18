@@ -24,7 +24,7 @@ symlinks: $(refs)
 .PHONY: $(refs)
 $(refs):
 	@echo "linking $(PWD)/$@ to $(HOME)/$@" && \
-	ln -fs $(PWD)/$@ $(HOME)/$@
+	ln -fs $(PWD)/$@ $(HOME)/
 
 # Targets to run setup scripts
 scripts: $(scripts)
