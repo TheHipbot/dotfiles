@@ -15,4 +15,5 @@ terraform
 thefuck
 tmux
 tree
+vim
 visual-studio-code-bin

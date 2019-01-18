@@ -1,4 +1,4 @@
-export EDITOR=emacs -nw
+export EDITOR='emacs -nw'
 export CLICOLOR=1
 
 # ENVIRONMENT
@@ -66,7 +66,7 @@ if [ -f "/usr/lib/bash-git-prompt/gitprompt.sh" ]; then
     GIT_PROMPT_END="\n\t λ "
     GIT_PROMPT_END_USER="\n\t λ "
     GIT_PROMPT_THEME=Solarized
-    source "/usr/lib/bash-git-prompt/share/gitprompt.sh"
+    source "/usr/lib/bash-git-prompt/gitprompt.sh"
 fi
 
 if [ -f "/usr/share/bash-completion/bash_completion" ]; then

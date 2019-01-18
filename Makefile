@@ -1,10 +1,10 @@
 OS=osx
+GIT_CONFIG=.gitconfig
 SCRIPT_DIR := ${PWD}/osx/scripts/
 
 # array files to symlink into home dir
 refs = .profile \
 	   .bash_profile \
-	   .gitconfig \
 	   .gitignore_global \
 	   .tmux.conf \
 	   .emacs.d
@@ -26,6 +26,11 @@ $(refs):
 	@echo "linking $(PWD)/$@ to $(HOME)/$@" && \
 	ln -fs $(PWD)/$@ $(HOME)/
 
+.PHONY: gitconfig
+gitconfig:
+	@echo "linking $(PWD)/$@ to $(HOME)/$@" && \
+	ln -fs $(PWD)/${GIT_CONFIG} $(HOME)/
+
 # Targets to run setup scripts
 scripts: $(scripts)
 
@@ -35,7 +40,7 @@ $(scripts):
 	$@
 
 .PHONY: whole-shebang
-whole-shebang: symlinks scripts
+whole-shebang: symlinks scripts gitconfig
 	@echo install complete, be sure to re-source your .profile by running "source $$HOME/.profile" or starting a new terminal session
 
 .DEFAULT_GOAL := whole-shebang
