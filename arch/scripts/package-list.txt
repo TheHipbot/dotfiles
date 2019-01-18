@@ -6,7 +6,6 @@ go
 guake
 jq
 htop
-jdk8
 packer
 pyenv
 ripgrep
