@@ -1,3 +1,4 @@
+OS=osx
 SCRIPT_DIR := ${PWD}/osx/scripts/
 
 # array files to symlink into home dir
@@ -15,9 +16,7 @@ scripts = homebrew.sh \
 		  bash.sh \
 		  rust.sh
 
-# init:
-# 	git submodule init && \
-# 	git submodule update
+-include ${OS}/Makefile
 
 # Targets to create symlinks
 symlinks: $(refs)
@@ -32,11 +31,11 @@ scripts: $(scripts)
 
 .PHONY: $(scripts)
 $(scripts):
-	@echo "running ${SCRIPT_DIR}$@" && \
-	${SCRIPT_DIR}$@
+	@echo "running $@" && \
+	$@
 
 .PHONY: whole-shebang
 whole-shebang: symlinks scripts
-	@echo install complete, be sure to resource your .profile by running "source $$HOME/.profile" or starting a new terminal session
+	@echo install complete, be sure to re-source your .profile by running "source $$HOME/.profile" or starting a new terminal session
 
 .DEFAULT_GOAL := whole-shebang
