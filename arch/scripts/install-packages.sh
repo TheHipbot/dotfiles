@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-$SCRIPT_PATH = $(dirname $0)
+SCRIPT_PATH=$(dirname $0)
 
 # Update and install yay
 sudo pacman -Syy --noconfirm
