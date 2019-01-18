@@ -1,3 +1,5 @@
+SCRIPTS_PATH=${PWD}/arch/scripts
+
 # array files to symlink into home dir
 refs = .profile \
 	   arch/.bash_profile \
