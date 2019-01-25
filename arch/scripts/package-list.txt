@@ -2,8 +2,11 @@ bash-completion
 bash-git-prompt
 chromium
 emacs
+fzf
 go
 guake
+jdk8-openjdk
+jdk11-openjdk
 jq
 htop
 packer
@@ -17,3 +20,4 @@ tmux
 tree
 vim
 visual-studio-code-bin
+z

@@ -57,8 +57,14 @@ function mcd() {
 
 # thefuck
 if which thefuck > /dev/null; then
-   eval "$(thefuck --alias)"
+    eval "$(thefuck --alias)"
 fi
+
+if which hermes > /dev/null; then
+    eval "$(hermes alias)"
+fi
+
+[[ -r "/usr/share/z/z.sh" ]] && source /usr/share/z/z.sh
 
 if [ -f "/usr/lib/bash-git-prompt/gitprompt.sh" ]; then
     __GIT_PROMPT_DIR=/usr/lib/bash-git-prompt/

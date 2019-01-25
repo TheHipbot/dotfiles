@@ -23,12 +23,12 @@ symlinks: $(refs)
 
 .PHONY: $(refs)
 $(refs):
-	@echo "linking $(PWD)/$@ to $(HOME)/$@" && \
+	@echo "linking $(PWD)/$@ to home folder/$@" && \
 	ln -fs $(PWD)/$@ $(HOME)/
 
 .PHONY: gitconfig
 gitconfig:
-	@echo "linking $(PWD)/$@ to $(HOME)/$@" && \
+	@echo "linking $(PWD)/$@ to home folder" && \
 	ln -fs $(PWD)/${GIT_CONFIG} $(HOME)/
 
 # Targets to run setup scripts

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-yay -Sy docker
+yay -Sy --noconfirm docker
 sudo usermod -aG docker $(whoami)
 
 sudo systemctl enable docker
