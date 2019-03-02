@@ -9,6 +9,5 @@ refs = arch/.bash_profile \
 # ORDERED array of scripts to run
 scripts = arch/scripts/install-packages.sh \
 		  arch/scripts/docker.sh \
-		  arch/scripts/java.sh \
 		  scripts/node.sh \
 		  scripts/rust.sh

@@ -55,6 +55,8 @@ function mcd() {
 
 # INITS
 
+export PATH=$GOPATH/bin:$HOME/.cargo/bin:$PATH
+
 # thefuck
 if which thefuck > /dev/null; then
     eval "$(thefuck --alias)"
@@ -62,6 +64,10 @@ fi
 
 if which hermes > /dev/null; then
     eval "$(hermes alias)"
+fi
+
+if which pyenv > /dev/null; then
+    PATH=$(pyenv root)/shims:$PATH
 fi
 
 [[ -r "/usr/share/z/z.sh" ]] && source /usr/share/z/z.sh
@@ -82,5 +88,3 @@ fi
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-export PATH=$GOPATH/bin:$HOME/.cargo/bin:$PATH
