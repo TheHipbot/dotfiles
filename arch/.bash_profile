@@ -27,6 +27,7 @@ alias lr=ListRecursively
 alias h=GrepHistory
 alias hl=GrepHistory
 alias cl='clear'
+alias clip='xclip -sel clip'
 
 #------- FUNCTIONS -------#
 
@@ -64,6 +65,10 @@ export PATH=$GOPATH/bin:$HOME/.cargo/bin:$PATH
 # thefuck
 if which thefuck > /dev/null; then
     eval "$(thefuck --alias)"
+fi
+
+if which rbenv > /dev/null; then
+    eval "$(rbenv init -)"
 fi
 
 if which hermes > /dev/null; then
