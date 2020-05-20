@@ -13,40 +13,9 @@ export GO111MODULE=on
 ## Bash
 alias gopath='cd $GOPATH'
 alias lart='ls -lart'
-alias paux='ps aux'
 alias repos='cd ~/repos'
-alias pa=FindProcess
-alias kp=KillProcess
-alias la=ListToLess
-alias ll=ListDetailToLess
-alias lr=ListRecursively
-alias h=GrepHistory
-alias hl=GrepHistory
-alias cl='clear'
 
 #------- FUNCTIONS -------#
-
-function FindProcess() {
-    ps -A -o 'pid,args' | grep "$@" | grep -v grep
-}
-function KillProcess() {
-    killall -9 "$@";
-}
-function ListToLess() {
-    ls -a "$@" | less;
-}
-function ListDetailToLess() {
-    ls -al "$@" | less;
-}
-function ListRecursively() {
-    ls -R "$@";
-}
-function GrepHistory() {
-    history | grep "$@";
-}
-function GrepHistoryToLess() {
-    history | grep "$@" | less;
-}
 
 # mkdir and cd
 function mcd() {
@@ -59,6 +28,16 @@ function mcd() {
 if which thefuck > /dev/null; then
    eval "$(thefuck --alias)"
 fi
+
+if which hermes > /dev/null; then
+    eval "$(hermes alias)"
+fi
+
+if which pyenv > /dev/null; then
+    PATH=$(pyenv root)/shims:$PATH
+fi
+
+[[ -r "/usr/share/z/z.sh" ]] && source /usr/share/z/z.sh
 
 if [ -f "$(brew --prefix bash-git-prompt)/share/gitprompt.sh" ]; then
     GIT_PROMPT_ONLY_IN_REPO=0
@@ -76,9 +55,5 @@ fi
 if [ -f "$(brew --prefix)/opt/bash-completion/etc/bash_completion" ]; then
     . "$(brew --prefix)/opt/bash-completion/etc/bash_completion"
 fi
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 export PATH=/usr/local/bin:/usr/local/sbin:$GOPATH/bin:$PATH
