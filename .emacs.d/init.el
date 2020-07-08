@@ -9,7 +9,8 @@
   sentence-end-double-space nil)
 
 (show-paren-mode t)
-(global-linum-mode t)
+(global-display-line-numbers-mode t)
+(setq display-line-numbers "%4d \u2502 ")
 
 (setq my-packages '(auto-complete git-gutter go-mode
                     haskell-mode multiple-cursors neotree
@@ -106,15 +107,6 @@
   :interpreter "node"
   :init
   (folding-add-to-marks-list 'js2-mode "// {{{" "// }}}" nil t))
-
-;; scala mode
-(use-package ensime
-  :pin melpa-stable)
-
-;; elm mode
-(use-package elm-mode
-  :ensure t
-  :mode "\\.elm\\'")
 
 ;; elixir mode
 (use-package alchemist)
