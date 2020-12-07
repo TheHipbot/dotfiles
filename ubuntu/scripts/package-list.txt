@@ -1,0 +1,17 @@
+bash-completion
+docker-ce
+docker-ce-cli
+containerd.io
+emacs
+fzf
+golang
+guake
+jq
+htop
+packer
+pyenv
+ripgrep
+thefuck
+tmux
+tree
+vim
