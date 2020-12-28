@@ -7,6 +7,6 @@ refs = ubuntu/.bash_profile \
 	   .emacs.d
 
 # ORDERED array of scripts to run
-scripts = ubuntu/add-repos.sh \
+scripts = ubuntu/scripts/add-repos.sh \
 		  ubuntu/scripts/install.sh \
 		  scripts/rust.sh

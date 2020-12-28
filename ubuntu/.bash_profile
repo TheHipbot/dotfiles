@@ -90,4 +90,6 @@ if [ -f "/usr/share/bash-completion/bash_completion" ]; then
     . "/usr/share/bash-completion/bash_completion"
 fi
 
-export PATH=$GOPATH/bin:$HOME/.cargo/bin:$HOME/.tfenv/bin:$PATH
+export PATH=$GOPATH/bin:$HOME/.cargo/bin:$HOME/.tfenv/bin:$HOME/.pyenv/bin:$PATH
+source "$HOME/.cargo/env"
+

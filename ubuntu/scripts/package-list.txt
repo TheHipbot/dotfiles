@@ -9,7 +9,6 @@ guake
 jq
 htop
 packer
-pyenv
 ripgrep
 thefuck
 tmux
