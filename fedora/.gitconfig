@@ -114,9 +114,5 @@
         editor = emacs
         autocrlf = false
         excludesfile = ~/.gitignore_global
-[credential]
-        helper = osxkeychain
 [url "git@github.com:"]
         insteadOf = https://github.com/
-[url "git@gitlab.com:"]
-        insteadOf = https://gitlab.com/
