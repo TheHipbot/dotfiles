@@ -7,10 +7,8 @@
 *.iml
 .idea/
 
+### VSCODE ###
+.vscode/
+
 ### OS X ###
 .DS_Store
-
-### JAVA ###
-target/
-build/
-**/*.class

@@ -1,5 +1,5 @@
 # array files to symlink into home dir
-refs = .bash_profile \
+refs = osx/.bash_profile \
 	   .gitconfig \
 	   .gitignore_global \
 	   .tmux.conf \
