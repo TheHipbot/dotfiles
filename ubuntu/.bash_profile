@@ -58,6 +58,10 @@ function mcd() {
     mkdir $1 && cd $_
 }
 
+function reprof() {
+    source $HOME/.bash_profile
+}
+
 # thefuck
 if which thefuck > /dev/null; then
     eval "$(thefuck --alias)"
@@ -75,7 +79,9 @@ if which pyenv > /dev/null; then
     PATH=$(pyenv root)/shims:$PATH
 fi
 
-[[ -r "/usr/share/z/z.sh" ]] && source /usr/share/z/z.sh
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 if [ -f "$HOME/.bash-git-prompt/gitprompt.sh" ]; then
     __GIT_PROMPT_DIR=$HOME/.bash-git-prompt/
@@ -90,6 +96,5 @@ if [ -f "/usr/share/bash-completion/bash_completion" ]; then
     . "/usr/share/bash-completion/bash_completion"
 fi
 
-export PATH=$GOPATH/bin:$HOME/.cargo/bin:$HOME/.tfenv/bin:$HOME/.pyenv/bin:$PATH
+export PATH=$GOPATH/bin:$HOME/.cargo/bin:$HOME/.tfenv/bin:$PATH
 source "$HOME/.cargo/env"
-

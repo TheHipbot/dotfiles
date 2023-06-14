@@ -59,6 +59,10 @@ function mcd() {
     mkdir $1 && cd $_
 }
 
+function reprof() {
+    source $HOME/.bash_profile
+}
+
 function upgrayyedd() {
     brew upgrade
 }
@@ -80,24 +84,28 @@ if which pyenv > /dev/null; then
     PATH=$(pyenv root)/shims:$PATH
 fi
 
-if [ -f "/opt/homebrew/bin/brew"]; then
+if [ -f "/opt/homebrew/bin/brew" ]; then
     eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
-if [ -f "$(brew --prefix)/share/gitprompt.sh" ]; then
-    __GIT_PROMPT_DIR=$HOME/.bash-git-prompt/
+if [ -f "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh" ]; then
+    __GIT_PROMPT_DIR=$(brew --prefix)/opt/bash-git-prompt/share
     GIT_PROMPT_ONLY_IN_REPO=0
     GIT_PROMPT_END="\n\t λ "
     GIT_PROMPT_END_USER="\n\t λ "
     GIT_PROMPT_THEME=Solarized
-    source "$HOME/.bash-git-prompt/gitprompt.sh"
+    source "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh"
 fi
 
 if [ -f "$(brew --prefix)/opt/bash-completion/etc/bash_completion" ]; then
     . "$(brew --prefix)/opt/bash-completion/etc/bash_completion"
 fi
 
-export PATH=$GOPATH/bin:$HOME/.cargo/bin:$HOME/.tfenv/bin:$HOME/.pyenv/bin:$PATH
+export PATH=$HOME/bin:$GOPATH/bin:$HOME/.cargo/bin:$HOME/.tfenv/bin:$HOME/.pyenv/bin:$PATH
 source "$HOME/.cargo/env"
 
 
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

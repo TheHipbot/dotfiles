@@ -59,6 +59,10 @@ function mcd() {
     mkdir $1 && cd $_
 }
 
+function reprof() {
+    source $HOME/.bash_profile
+}
+
 function upgrayyedd() {
     sudo dnf update -y && sudo dnf upgrade -y
 }

@@ -58,6 +58,10 @@ function mcd() {
     mkdir $1 && cd $_
 }
 
+function reprof() {
+    source $HOME/.bash_profile
+}
+
 # INITS
 
 export PATH=$GOPATH/bin:$HOME/.cargo/bin:$PATH
